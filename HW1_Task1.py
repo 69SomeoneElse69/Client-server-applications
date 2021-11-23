@@ -1,54 +1,28 @@
 import string
 import locale
 
-user_word = input("введите слово: ")
-print(f'вы ввели: {user_word}  введенный тип: {type(user_word)}')
+str_list = []
+uni_list = []
+SITE_UNI_LIST = ['\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430',
+            '\u0441\u043e\u043a\u0435\u0442',
+            '\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440']
+
+for number in range(3):
+    user_word = input(f'введите {number+1} слово: ')
+    str_list.append(user_word)
+    uni_list.append(user_word.encode('unicode_escape'))
 
 """
 1. Каждое из слов «разработка», «сокет», «декоратор» представить в строковом формате и проверить тип и содержание соответствующих переменных.
 Затем с помощью онлайн-конвертера преобразовать строковые представление в формат Unicode и также проверить тип и содержимое переменных."""
-print('\nзадание 1 ==========================')
 
 
+def print_value_and_type(items: list):
+    for item in items:
+        print(f'вы ввели: {item}  введенный тип: {type(item)}')
+    print("-" * 30)
 
 
-
-
-"""2. Каждое из слов «class», «function», «method» записать в байтовом типе без преобразования в последовательность кодов 
-(не используя методы encode и decode) и определить тип, содержимое и длину соответствующих переменных."""
-print('\nзадание 2 ==========================')
-
-
-"""3. Определить, какие из слов «attribute», «класс», «функция», «type» невозможно записать в байтовом типе."""
-print('\nзадание 3 ==========================')
-
-print(f'возможно записать в байтовом типе: {user_word.isascii()}')
-
-
-"""4. Преобразовать слова «разработка», «администрирование», «protocol», «standard» из строкового представления в байтовое 
-и выполнить обратное преобразование (используя методы encode и decode)."""
-print('\nзадание 4 ==========================')
-ENC_STR_BYTES = user_word.encode('utf-8')
-print(f'кодирование в utf-8: {ENC_STR_BYTES}, получен тип: {type(ENC_STR_BYTES)}')
-
-DEC_STR = ENC_STR_BYTES.decode('utf-8')
-print(f'декодирование: {DEC_STR}, получен тип: {type(DEC_STR)}')
-
-"""5. Выполнить пинг веб-ресурсов yandex.ru, youtube.com и преобразовать результаты из байтовового в строковый тип на кириллице."""
-print('\nзадание 5 ==========================')
-
-
-"""6. Создать текстовый файл test_file.txt, заполнить его тремя строками: «сетевое программирование», «сокет», «декоратор». 
-Проверить кодировку файла по умолчанию. Принудительно открыть файл в формате Unicode и вывести его содержимое."""
-print('\nзадание 6 ==========================')
-
-
-with open('HW1_Text.txt', encoding='utf-8') as f_n:
-    counter = 1
-    for el_str in f_n:
-        print(f'строка {counter}: {el_str}тип: {type(el_str)}', end='\n')
-        counter = counter + 1
-
-
-default_encoding = locale.getpreferredencoding()
-print(f'кодировка по умолчанию {default_encoding}')
+print_value_and_type(str_list)
+print_value_and_type(uni_list)
+print_value_and_type(SITE_UNI_LIST)
