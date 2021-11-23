@@ -1,0 +1,18 @@
+{
+    "orders": [
+        {
+            "item": "pen",
+            "quantiti": "100",
+            "pice": "20",
+            "buyer": "Максим E.C.",
+            "date": "05.09.2011"
+        },
+        {
+            "item": "стол",
+            "quantiti": "5",
+            "pice": "1700",
+            "buyer": "Ivanov I.P.",
+            "date": "12.12.2020"
+        }
+    ]
+}

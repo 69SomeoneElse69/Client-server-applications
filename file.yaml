@@ -1,0 +1,11 @@
+items:
+- computer
+- printer
+- keyboard
+- mouse
+items_pice:
+  computer: 100-1000
+  keyboard: 20-30
+  mouse: 5-20
+  printer: 50-200
+items_quantiti: 4
